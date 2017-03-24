@@ -7,14 +7,14 @@ class App extends Component {
   constructor(props){
     super(props);
     this.state = {
-      mydata:null
+      mydata:{}
     }
-    this.socket = SocketIOClient('http://localhost:8000');
+    this.socket = SocketIOClient('http://buttecte.org:8000');
   }
   render() {
     this.socket.on('hello',(data)=>{
       this.setState( {
-        mydata: data.message
+        mydata: data
       })
       console.log(data);
     })
