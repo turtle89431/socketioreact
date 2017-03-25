@@ -7,7 +7,8 @@ class App extends Component {
   constructor(props){
     super(props);
     this.state = {
-      mydata:{}
+      mydata:{},
+      test:[1,2,3]
     }
     this.socket = SocketIOClient('http://buttecte.org:8000');
   }
@@ -16,13 +17,13 @@ class App extends Component {
       this.setState( {
         mydata: data
       })
-      console.log(data);
+      this.setState({test:[4,5,8]})
     })
     return (
       <div className="App">
         <div className="App-header">
           <img src={logo} className="App-logo" alt="logo" />
-          <h2>Walter Socket.io React</h2>
+          <h2>Walter Winser gitSocket.io React</h2>
         </div>
         <p className="App-intro">
           {this.state.mydata.message}
